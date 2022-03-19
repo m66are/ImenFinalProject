@@ -6,7 +6,7 @@ const cvSchema = mongoose.Schema({
     phone: Number,
     cvLink: String,
     lm: String,
-
+/////huyrtrtr
 
 });
 const cvModel = mongoose.model("cvModel", cvSchema);
