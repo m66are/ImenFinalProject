@@ -13,10 +13,10 @@ import * as passportConfig from "./strategies/local";
 /////hhhhhh
 const app = express();
 app.use(session({
-    secret: 'imen',
+    secret: 'secret',
     resave: false,
-    saveUninitialized: true,
-    cookie: { maxAge: 300000 }
+    saveUninitialized: false,
+    cookie : {maxAge : 50000}
   }))
 app.use(passport.initialize());
 
