@@ -67,7 +67,7 @@ authRouter.post('/signup',  validations, async (req, res) => {
      
        
         if (user) {
-             res.status(400).send("User already registered.");
+             res.status(400).send({err:"User already registered."});
         } else {
            
 
@@ -99,4 +99,13 @@ authRouter.post('/signup',  validations, async (req, res) => {
     });
  
 
+
+    authRouter.get("/",async(req,res)=>{
+        try {
+            let result=await userModel.find()
+            res.send({users:result})
+        } catch (error) {
+            console.log(error)
+        }
+    })
 export default authRouter;
