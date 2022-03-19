@@ -1,0 +1,23 @@
+.offre{
+width: 100%;
+height: 10vh;
+justify-content: space-around;
+left: auto;
+margin-right: 50%;
+right: 50%;
+padding-right: 10;
+
+}
+.cards{
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+    align-items: unset;
+    align-content: stretch;
+    width: 90%;
+    margin: 0 auto;
+    flex-wrap: nowrap;
+}
+.market{
+    text-align: center;
+}
