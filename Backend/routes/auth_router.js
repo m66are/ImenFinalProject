@@ -24,13 +24,29 @@ let validations = [
 // ----- LOGIN --- -----//
 
 
-authRouter.post('/login', passport.authenticate('local'), ( req, res) => {
-    
-    
-        res.send("auth nice")
-    
-    
-})
+
+authRouter.post('/login', (req, res, next) => {
+    passport.authenticate('local',
+    (err, user, info) => {
+      if (err) {
+        return res.send(err);
+      }
+  
+      if (!user) {
+        return res.status(404).send(info)
+      }
+  
+      req.logIn(user, function(err) {
+          if (err) {
+              console.log("ERRRRRROOOOOR");
+          return res.status(404).send(err);
+        }
+        console.log("'nice : " + user);
+        return res.status(200).json(user);
+      });
+  
+    })(req, res, next);
+  });
 
 
 

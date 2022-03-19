@@ -40,7 +40,7 @@ passport.use(new LocalStrategy({ usernameField: 'email' },
                     })
                     
                 } else {
-                   done(null,false)
+                    done(null, false, { message: 'No user with this email' } )
                 }
             });
            
