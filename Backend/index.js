@@ -30,7 +30,12 @@ app.use(
 app.use(cors());
 app.get('/',(req, res)=> {
     res.send('Running')
-})
+});
+
+
+
+
+// ------------ROUTES ------------------//
 app.use('/cv', cvsRouter);
 app.use('/auth', authRouter);
 
